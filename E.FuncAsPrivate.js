@@ -28,5 +28,3 @@ me.setJob("employed!");
 console.log(me.getJob()); // now prints updated
 me.setAge("Still oh hell no");
 console.log(me.getAge());
-
- 
