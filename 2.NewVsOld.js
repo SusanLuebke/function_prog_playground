@@ -44,7 +44,7 @@ const getPersonData = () => ({
 
 const name = () => // no arguments
 const name = arr1 => // one argument
-const name = (arr1, arr2) => // have to go back to org and use parens
+const name = (arr1, arr2) => // have to go back to org and use parens and backets
 
 // if more than return statement then have to use brackets AND return key word
 

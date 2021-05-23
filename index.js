@@ -1,32 +1,32 @@
-console.log("Function as Private")
+console.log("Functions as Objects")
 
-// The ironic use of private variables; typically done with an underscore before the name
+// Functions have properties, 
+// 1. .Name: like the name of the function 
+// 2. .Length of the function (the number of arguments)
+// 3. toString() - the words in the function
+// 4. Call() - calls the function - RARE!
+// 5. Apply() - similar to call by returns array - RARE!
+// 6. Bind() - can use to fix values, the easy way!
 
-const Person = ({ name, age, job}) => {
-  var _name = name;
-  var _age = age;
-  var _job = job;
+// Examples 
+// Using call(), first argument is a "this" so will typically be null
 
-// use a getter to pull the data
-  return {
-    getName: () => _name,
-    getAge: () => _age,
-    getJob: () => _job,
+const add = (x, y, z) => x + y + z;
+console.log(add.call(null, 1, 2, 3));
 
-    // the setters
-    // the newJob function is _job, set to now equal newJob
-    setJob: newJob => _job = newJob,
-    setAge: newAge => _age = newAge,
-  };
-}
+// above is the same as...
+console.log(add(1, 2, 3));
 
-const me = Person({ name: "Susan", age: "Oh hell no", job: "software engineer"});
-console.log(me.getName()); // this is the only way to access getName
+// apply() is similar to call, but passes arguments as an array
+console.log(add.apply(null, [1, 2, 3]))
 
-console.log(me.getJob()); // gives original _job
-me.setJob("employed!");
-console.log(me.getJob()); // now prints updated
-me.setAge("Still oh hell no");
-console.log(me.getAge());
+// HOWEVER! IT IS EASER TO USE spread operators, ...args
 
- 
+// const args = [1, 2, 3];
+// console.log(add(...args));
+
+// Using bind() to fix a values
+//const add = (x, y, z) => x + y + z;
+const args = [1, 2, 3];
+const add1 = add.bind(null, 1);
+console.log(add1(2, 3));
