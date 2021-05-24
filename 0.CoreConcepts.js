@@ -1,4 +1,5 @@
 console.log("Core Concepts of Functional Programming")
+// LinkedIn with Shaun Wassell; Learning Functional Programming with JavaScript ES6+
 
 // 1. Immutability - variables can NOT be mutated; has to be a new variable every time
 
